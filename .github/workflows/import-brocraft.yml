@@ -1,0 +1,14 @@
+name: Import BroCraft release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Import preparation
+        run: echo 'BroCraft release import is being configured.'
