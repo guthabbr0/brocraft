@@ -1,0 +1,93 @@
+{
+  "tests": 22,
+  "results": [
+    {
+      "name": "Identical seeds and different chunk generation order produce identical voxels",
+      "status": "PASS"
+    },
+    {
+      "name": "Different world seeds produce different terrain",
+      "status": "PASS"
+    },
+    {
+      "name": "Spawn search finds dry land for 14 varied seeds",
+      "status": "PASS"
+    },
+    {
+      "name": "Negative chunk coordinates address the correct voxels",
+      "status": "PASS"
+    },
+    {
+      "name": "Edited blocks survive serialization and chunk regeneration",
+      "status": "PASS"
+    },
+    {
+      "name": "Bedrock is protected from edits",
+      "status": "PASS"
+    },
+    {
+      "name": "A newly placed chest is empty and stays empty when regenerated",
+      "status": "PASS"
+    },
+    {
+      "name": "Furnace data is initialized as soon as its block is placed",
+      "status": "PASS"
+    },
+    {
+      "name": "Generated stone contains caves and depth-restricted rare ores",
+      "status": "PASS"
+    },
+    {
+      "name": "Both log varieties produce four planks",
+      "status": "PASS"
+    },
+    {
+      "name": "Crafting recipes accept translation within a grid",
+      "status": "PASS"
+    },
+    {
+      "name": "Crafting accepts mirrored axes and rejects incorrect layouts",
+      "status": "PASS"
+    },
+    {
+      "name": "All 27 recipes match their exact spatial patterns",
+      "status": "PASS"
+    },
+    {
+      "name": "All 16 tools have distinct tiers, durability and single-item stacks",
+      "status": "PASS"
+    },
+    {
+      "name": "Inventory stack merge, overflow and removal preserve quantities",
+      "status": "PASS"
+    },
+    {
+      "name": "Tool durability is preserved by inventory transfers",
+      "status": "PASS"
+    },
+    {
+      "name": "Every furnace transformation consumes input and creates the correct output",
+      "status": "PASS"
+    },
+    {
+      "name": "Furnace without fuel never fabricates output",
+      "status": "PASS"
+    },
+    {
+      "name": "Blocked furnace output prevents fuel consumption",
+      "status": "PASS"
+    },
+    {
+      "name": "Changing furnace input resets the recipe progress",
+      "status": "PASS"
+    },
+    {
+      "name": "Voxel raycasting reports the correct hit, face and reach",
+      "status": "PASS"
+    },
+    {
+      "name": "Voxel raycasting handles negative directions and zero components",
+      "status": "PASS"
+    }
+  ]
+}

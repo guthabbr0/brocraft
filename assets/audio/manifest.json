@@ -1,0 +1,20 @@
+{
+  "title": "First Light, Last Stand",
+  "durationSeconds": 128.0,
+  "sampleRate": 32000,
+  "bars": 64,
+  "beatSeconds": 0.5,
+  "stems": [
+    "horizon",
+    "motion",
+    "titan",
+    "impact"
+  ],
+  "method": "Original additive and modal synthesis; no sampled recordings",
+  "peaks": {
+    "horizon": 0.25444236397743225,
+    "motion": 0.22173988819122314,
+    "titan": 0.2900703549385071,
+    "impact": 0.7275888919830322
+  }
+}

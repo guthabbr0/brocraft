@@ -1,0 +1,14 @@
+{
+  "inputSha256": "d97544349e5aa6c58545df2ee4467180b8d72585d85254305c71a344bcac8486",
+  "assets": {
+    "First-Light-Last-Stand.mp3": "5ea07894f0a3f89137eb1acb09f91a2a35540421c7e1d2393b1a19c3b5874899",
+    "Living-World-Soundcheck.mp3": "e297a17c18445c45354320fcd9deca6be7f7f3f459869c1a602a9e782eac315e",
+    "horizon.mp3": "eaa429a87bca2b9b21ecd643d218c7c6230276593444d5aac6f0cba07416f4c0",
+    "impact.mp3": "e867838adc12f7e1bb57388439915bc80aee07035c544cfe549bb69af1e89729",
+    "living-world.json": "5ea9e4f960ca299b7cff7fc3d1fe97c2b10e8c39de0df72f10964384571a05bc",
+    "living-world.mp3": "6b7d2ff30af93bef594b757a4a35c2402a1ad8c53a89a0db3d0b09dcb99b8780",
+    "manifest.json": "55d7af22ce3bedd040310ca95e9708950211a719f12c07ba558d4f7754d856dc",
+    "motion.mp3": "79c70e761da130ca9cf30c1fef35b5feaf224ab8f4229c607090b09ae280d995",
+    "titan.mp3": "584fd5b4863031ff9c9e766206d3aea6819c573694f14e18f08b19aceeb73bd2"
+  }
+}

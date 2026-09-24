@@ -1,0 +1,16 @@
+{
+  "edition": "BroCraft 1.2 Living World",
+  "htmlBytes": 14728329,
+  "htmlSha256": "fc35bfbde56a14e1cf1cac3d10a97797534ea51958cb04cda599fc67b76a717f",
+  "coreTestsPassed": 22,
+  "foleyClips": 385,
+  "scoreSeconds": 128.0,
+  "encodedStemSeconds": {
+    "horizon": 128.052,
+    "motion": 128.052,
+    "titan": 128.052,
+    "impact": 128.052
+  },
+  "scriptSyntax": "PASS",
+  "verificationLimits": "This build job does not test physical audio output, browser controls or persistent saves."
+}
