@@ -1,0 +1,64 @@
+name: Build BroCraft static release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, brocraft-import]
+    paths:
+      - '.bootstrap/**'
+      - 'src/**'
+      - 'tools/**'
+      - 'build.py'
+      - 'scripts/build_static.py'
+      - 'requirements-build.txt'
+      - '.github/workflows/build-brocraft.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: brocraft-build-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out the requested revision
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Install audio authoring dependencies
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          python3 -m venv .venv
+          .venv/bin/python -m pip install --disable-pip-version-check -r requirements-build.txt
+      - name: Build and verify the complete game
+        run: .venv/bin/python scripts/build_static.py
+      - name: Commit verified static output
+        env:
+          BRANCH: ${{ github.ref_name }}
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'The static release is already current.'
+            exit 0
+          fi
+          remote_sha="$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)"
+          if [ "$remote_sha" != "$EXPECTED_SHA" ]; then
+            echo 'The branch changed during this build. Refusing to overwrite it.'
+            exit 1
+          fi
+          git commit -m 'Build verified BroCraft Living World static release'
+          git push origin "HEAD:refs/heads/$BRANCH"
+          echo '## Verified BroCraft release' >> "$GITHUB_STEP_SUMMARY"
+          cat BUILD-REPORT.json >> "$GITHUB_STEP_SUMMARY"
